@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- HEAD SECTION -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+    <!-- STYLE SECTION -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.7;
+        }
+        a { color: #854F6C; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #854F6C, #D38E9E);
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            box-shadow: 0 11px 14px rgba(0, 0, 0, 0.1);
+        }
+        header nav ul { list-style: none; padding: 0; }
+        header nav ul li { display: inline; margin: 0 15px; }
+        header nav ul li a { color: white; font-weight: bold; }
+
+        /* Section Styles */
+        section {
+            padding: 5em 20px;
+            margin: 2em auto;
+            margin-top: 1em;
+            max-width: 1300px;
+            background: #b39eb5;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            text-align: center;
+            color: #854F6C;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #D38E9E;
+            color: white;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #854F6C;
+        }
+
+        .back-btn:before {
+            content: '←'; /* Arrow symbol for back button */
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+
+        /* Spotify */
+        .song{
+            text-align: center;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /*Digital Timer*/
+        .timer-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #digital-timer {
+            font-weight: bold;
+        }
+
+    .gif-image {
+        width: 30%; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .gif-img {
+        width: 300px;
+        height: 300px;
+    }
+
+        /* Gallery and Image Styles */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 26px;
+        }
+        .circular-image {
+            border: 5px solid white;
+            border-radius: 50%;
+        }
+        .container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .gallery-video video {
+            width: 45%;
+            max-width: 500px;
+            border: 2px solid #854F6C;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Resume Table Styles */
+        .resume-table {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .resume-table th, .resume-table td {
+            border: 1px solid grey;
+            padding: 15px;
+            text-align: left;
+        }
+        .resume-table th {
+            background: #854F6C;
+            color: white;
+            font-size: 1.2em;
+        }
+        .resume-table tr:nth-child(even) { background: #D3D3D3; }
+        .resume-table tr:hover { background: none; }
+
+        ul.custom-list {
+        list-style-type: none;
+        padding-left: 0;
+        }
+        ul.custom-list li {
+        background: url('custom-marker.png') no-repeat left center;
+        padding-left: 30px;
+    }
+
+        /* Contact Section Styles */
+        .contact-section input,
+        .contact-section textarea {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 4px solid #9c469c;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+        .contact-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #854F6C;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #bb86b6;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 1px solid #dddddd;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        dd {
+        display: list-item;
+        list-style-type: "💜";
+        padding-inline-start: 1ch;
+        }
+
+        dt {
+        font-weight: bold;
+        }
+
+        dl {
+        max-width: 35ch;
+        }
+
+
+    </style>
+</head>
+
+<!-- BODY SECTION -->
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Welcome to Umairah Waheeda's Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#Sound Break">Sound Break</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ABOUT ME SECTION -->
+    <div class="timer-container">
+        <h1 id="digital-timer">00:00:00</h1>
+    </div>
+
+    <center><img src="capy.gif" width="300" height="300" class="gif-img"></center>
+
+    <section id="about-me">
+        <button class="back-btn" onclick="goBack()"></button>
+        <h2>About Me</h2>
+        <div class="container">
+            <img src="aboutme1.jpg" alt="Circular Image" class="circular-image" width="310" height="310">
+            <img src="aboutme.jpg" alt="Circular Image" class="circular-image" width="310" height="310">
+            <img src="aboutme2.jpg" alt="Circular Image" class="circular-image" width="310" height="310">  
+        </div>
+        <h2></h2> 
+        <div class="bio-layout">
+            <div class="bio-data">
+                <center>
+                    <a href="https://open.spotify.com/user/ylie9epvuq5wef036iir6hone?si=iA8v1yoEQ32pIYQrigU6Jg" target="_blank">
+                        ⇆ㅤ ||◁ㅤ❚❚ㅤ▷ㅤ↻ 
+                    </a>
+                </center>
+                <center>
+                    <font color="white">
+                        <font size="15">  ᡣ𐭩 •｡ ˚PERSONAL BIODATA ‎ꪆৎ ˚⋅ </font>
+                        <font face="Desdemona">
+                        <font color="white">
+                        <p><b>NAME:</b> NUR UMAIRAH WAHEEDA BINTI MOHD SALIM</p>
+                        <p><b>AGE: </b><sup>20</sup> <sub>YEARS OLD</sub></p>
+                        <p><b>BIRTHDAY:</b> 05 May 2004</p>
+                        <p><b>PLACE OF BIRTH:</b> HOSPITAL TENGKU AMPUAN AFZAN KUANTAN (HTAA)</p>
+                        <p><b>SIBLINGS:</b> I'M THE LAST CHILD OUT OF 3</p>
+                        <p style="color:purple;"> <b>FAVOURITE COLOR:</b> PURPLE</p>
+                        <p><b>FAVOURITE SINGER:</b> PABLO SEJUN</p>
+                    </font>
+                    </font>
+                </center>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <script>
+
+        function updateTimer() {
+            const now = new Date();
+            document.getElementById('digital-timer').textContent =
+                `${String(now.getHours()).padStart(2, '0')}:` +
+                `${String(now.getMinutes()).padStart(2, '0')}:` +
+                `${String(now.getSeconds()).padStart(2, '0')}`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+
+
+
+    <section id="resume">
+        <button class="back-btn" onclick="goBack()"></button>
+        <h2>Resume</h2>
+        <table class="resume-table">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Personal Information</strong></td>
+                    <td>
+                        <p><strong>Name:</strong> Nur Umairah Waheeda Binti Mohd Salim</p>
+                        <p><strong>Email:</strong> umairahwaheeda@gmail.com</p>
+                        <p><strong>Phone:</strong> +60116562xxxx</p>
+                        <p><strong>Address:</strong> No.23, Jalan Lili 1/5 Bestari Perdana, 81700 Pasir Gudang Johor</p>
+                    </td>
+                </tr>
+                <tr>
+    <td><strong><a href="#p1">Experience</a></strong></td>
+    <td>
+        <p><strong>Promoter</strong></p>
+        <p>XYZ Retail, Dec 2022 - May 2023</p>
+        <ul>
+            <li>Promoted and demonstrated product features to customers, driving a 20% increase in sales.</li>
+            <li>Engaged with customers to understand their needs and recommend suitable products.</li>
+            <li>Maintained a professional and welcoming demeanor to ensure customer satisfaction.</li>
+    </td>
+</tr>
+                <tr>
+    <td><strong>Skills</strong></td>
+    <td>
+        <ol>
+        <p><strong><li>Hard Skill</strong></p>
+            <dl class="custom-list">
+                <dd><i>Microsoft Word</i></dd>
+                <dd><i>Microsoft Excel</i></dd>
+                <dd><i>Programming Languages</i></dd>
+            </dl>
+        <p><strong><li>Soft Skill</li></strong></p>
+        <dl class="custom-list">
+            <dd><i>Communication Skills</i></dd>
+            <dd><i> Making</i></dd>
+            <dd><i>Multi-Tasking</i></dd>
+        </dl>
+        </ol>
+    </td>
+</tr>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section id="experience">
+        <button class="back-btn" onclick="goBack()"></button>
+        <h2 id="p1" >Experience</a></h2>
+        <div class="container">
+        <img src="workexperience1.jpg" alt="Work Experience Image" class="circular-image" width="350" height="350">
+        <img src="workexperience.jpg" alt="Work Experience Image" class="circular-image" width="350" height="350">
+        <img src="workexperience2.jpg" alt="Work Experience Image" class="circular-image" width="370" height="370">
+        <img src="workexperience5.jpg" alt="Work Experience Image" class="circular-image" width="350" height="350">
+        <img src="workexperience3.jpg" alt="Work Experience Image" class="circular-image" width="350" height="350">
+        <img src="workexperience4.jpg" alt="Work Experience Image" class="circular-image" width="350" height="350">
+        </div>
+        <br>
+        <center><p> My internship at Politeknik Ibrahim Sultan's HEP Department taught me professionalism, teamwork, and effective communication in a student-focused environment....</p>
+        <br>
+                <font color="white">
+                    <font size="15">  ˙✧˖°📷 INTERNSHIP AT PIS ‎ ⋆｡˚꩜⋅ </font>
+                    <font face="Desdemona">
+                    <font color="white">
+                    <p><b>NAME OF ORGANIZATION: </b>POLITEKNIK IBRAHIM SULTAN PASIR GUDANG</p>
+                    <p><b>DEPARTMENT: </b><sup>JABATAN HAL EHWAL PELAJAR</sup> <sub>HEP</sub></p>
+                    <p><b>DURATION:</b>21 JULY 2024 - 12 SEPTEMBER 2024</p>
+                </font>
+                </font>
+           
+        </center>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </section>
+
+
+    <section id="Education">
+        <button class="back-btn" onclick="goBack()"></button>
+        <h2>Education</h2>
+
+        
+        <div class="container">
+            <img src="education.jpg" alt="education Image" class="circular-image" width="350" height="350">
+        <a target="_blank" href="education1.jpg">
+           <img src="education1.jpg" alt="education Image" class="circular-image" width="350" height="350">
+        </a>
+            <img src="education2.jpg" alt="education Image" class="circular-image" width="360" height="360">
+            <img src="education6.jpg" alt="education Image" class="circular-image" width="350" height="350">
+            <img src="education7.jpg" alt="education Image" class="circular-image" width="350" height="350">
+             <img src="education8.jpg" alt="education Image" class="circular-image" width="360" height="360">
+        </div>
+        <br>
+        <center><h3>・┆✦ʚHIGH SCHOOL: SMK SERI MAHKOTAɞ✦ ┆・</h3></center>
+            <div class="education-section">
+                <span><center>
+                 Studying at SMK Seri Mahkota was an unforgettable chapter of my life, spanning five enriching years from Form 1 to Form 5. It was not just a school but a place where I discovered my strengths, built lifelong friendships, and grew into the person I am today.
+             </span></center>
+         </div>
+         <br>
+         <br>
+         <br>
+      
+        <div class="container">
+            <img src="education4.jpg" alt="education Image" class="circular-image" width="350" height="330">
+        <a target="_blank" href="education3.jpg">
+            <img src="education3.jpg" alt="education Image" class="circular-image" width="350" height="330">
+        </a>
+            <img src="education5.jpg" alt="education Image" class="circular-image" width="350" height="330">
+            <img src="education9.jpg" alt="education Image" class="circular-image" width="350" height="330">
+            <a target="_blank" href="education10.jpg"> 
+            <img src="education10.jpg" alt="education Image" class="circular-image" width="350" height="330">
+            </a>
+            <img src="education11.jpg" alt="education Image" class="circular-image" width="350" height="330">
+        </div>
+        <br>
+        <center><h3>↻ ◁ |DIPLOMA: UiTM Cawangan Johor, Kampus Segamat| ▷ ↺</h3></center>
+         <div class="education-section">
+                <span><center>
+                 Studying at UiTM Segamat was transformative, fostering growth, teamwork, knowledge, and confidence through supportive lecturers, 
+                 vibrant campus life, and challenges.
+             </span></center>
+         </div>
+         <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
+    </section>
+
+
+    <section id="Sound Break">
+        <button class="back-btn" onclick="goBack()"></button>
+        <h2>Sound Break</h2>
+
+         <div class="container">
+
+
+            <a href="https://www.tiktok.com/@felipsuperior?_t=ZS-8rvVbDeiwaq&_r=1">
+                <img src="ken.jpg" alt="Thumbnail Image" width="200" height="190">
+            </a>
+
+            <a href="https://www.tiktok.com/@joshcullenn?_t=ZS-8rvVZSgmBKk&_r=1">
+                <img src="josh.jpg" alt="Thumbnail Image" width="200" height="190">
+            </a>
+        
+           <a href="https://www.tiktok.com/@truiszmc?_t=ZS-8rvV5etWTQb&_r=1">
+            <img src="pablo.jpg" alt="Thumbnail Image" width="200" height="190">
+        </a>
+
+              
+           <a href="https://www.tiktok.com/@justintdedios?_t=ZS-8rvVcvaGO01&_r=1">
+            <img src="justin.jpg" alt="Thumbnail Image" width="200" height="190">
+        </a>
+
+          
+        <a href="https://www.tiktok.com/@stellajero16?_t=ZS-8rvVdOe9xRQ&_r=1">
+            <img src="stell.jpg" alt="Thumbnail Image" width="200" height="190">
+        </a>
+
+        </div>
+        <br>
+
+        <center>
+            <center><p>🎶 Listen to My Favorite Music!</p></center>
+            <audio controls preload="metadata">
+                
+            <source src="gento.m4a" type="audio/mpeg">
+            </audio></center>
+            <br>
+        <center> 
+
+<!-- Image Map Generated by http://www.image-map.net/ -->
+<img src="gento2.jpg" usemap="#image-map" class="image" width="800" height="400">
+
+
+<map name="image-map">
+    <area target="_blank" alt="KEN SUSON" title="KEN SUSON" href="https://www.instagram.com/felipsuperior?igsh=MTR4Z2ozZnMzYWJ6cg==" coords="94,38,44" shape="circle">
+    <area target="_blank" alt="JUSTIN DE DIOS" title="JUSTIN DE DIOS" href="https://www.instagram.com/jahdedios?igsh=MWI5YzUwbXkycjZjdA==" coords="249,165,49" shape="circle">
+    <area target="_blank" alt="JOSH CULLEN" title="JOSH CULLEN" href="https://www.instagram.com/josh_cullen_s?igsh=Y2h3YWc1cDhkbXFu" coords="388,19,56" shape="circle">
+    <area target="_blank" alt="BABYBOO" title="BABYBOO" href="https://www.instagram.com/imszmc_?igsh=MXB5MGg0eGNnamp2ag==" coords="728,89,61" shape="circle">
+    <area target="_blank" alt="STELL AJERO" title="STELL AJERO" href="https://www.instagram.com/stell16_?igsh=YTdpeWY3NnNmcDUz" coords="447,137,123" shape="circle">
+</map>
+<br>
+        </center>
+            
+        <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cu6pPzya2Jc?si=QqBB3yaHub_MeEnB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>             
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bORVBWR8Hio?si=ut06e_gSY15cyFN4&amp;start=140" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </center>   
+     </script>
+    </section>
+
+
+
+    <section id="Gallery">
+        <button class="back-btn" onclick="goBack()"></button>
+        <center><h1 style="color:#854F6C;">Gallery</h1></center>
+        <center><div class="gallery-section"></div></center>
+        <center><div><span>
+                Share some key moments or images that define your journey...
+         </div></span></center>
+
+
+         <center><h2 style="color:rgb(145, 107, 145);"></p>૮꒰˶•FAMILY•˶꒱ა ♡</h2></center>
+     
+         <div class="container">
+            <a target="_blank" href="memories.jpg"> 
+            <img src="memories.jpg" alt="memories Image" class="circular-image" width="350" height="370">
+            </a>
+            <a target="_blank" href="memories1.jpg"> 
+            <img src="memories1.jpg" alt="memories Image" class="circular-image" width="350" height="370"> 
+            </a>
+        </div>
+
+        <br>
+
+        <div class="container">
+        <a target="_blank" href="memories14.jpg"> 
+            <img src="memories14.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+        </a>
+        <a target="_blank" href="memories12.jpg"> 
+           <img src="memories12.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+        </a>
+        <a target="_blank" href="memories16.jpg"> 
+            <img src="memories16.jpg" alt="memories Image" class="circular-image" width="320" height="360">
+        </a>
+        </div>
+
+       
+
+        <center><h2 style="color:rgb(145, 107, 145);">࣪𓏲ּ ᥫ᭡ ₊ ⊹ IBU AYAHˑ ִ ֶ 𓂃</h2></center>
+        <div class="container">
+        <a target="_blank" href="memories11.jpg">
+            <img src="memories11.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+        </a>
+        <a target="_blank" href="memories17.jpg">
+           <img src="memories17.jpg" alt="memories Image" class="circular-image" width="350" height="500">
+        </a>
+        <a target="_blank" href="memories13.jpg">
+           <img src="memories13.jpg" alt="memories Image" class="circular-image" width="360" height="360">
+        </a>
+        </div>
+        <br>
+
+        <center><h2 style="color:rgb(145, 107, 145);">⋆౨ৎ ࣪BESTIEE˚⟡˖</h2></center>
+        <p></p>
+        <div class="container">
+            <img src="memories2.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+            <a target="_blank" href="memories3.jpg"> 
+            <img src="memories3.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+            </a>
+            <img src="memories4.jpg" alt="memories Image" class="circular-image" width="360" height="360">
+            <a target="_blank" href="memories18.jpg"> 
+            <img src="memories18.jpg" alt="memories Image" class="circular-image" width="350" height="250">
+            </a>
+            <img src="memories22.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+            <img src="memories23.jpg" alt="memories Image" class="circular-image" width="360" height="360">
+        </div>
+        <br>
+
+        <center><h2 style="color:rgb(145, 107, 145);">༘˚⋆𐙚｡CLASSMATES⋆𖦹.✧˚</h2> </center>
+        <div class="container">
+            <a target="_blank" href="memories10.jpg"> 
+            <img src="memories10.jpg" alt="memories Image" class="circular-image" width="350" height="370">
+            </a>
+            <img src="memories9.jpg" alt="memories Image" class="circular-image" width="350" height="370"> 
+        </div>
+
+        <br>
+
+        <div class="container">
+            <img src="memories6.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+           <img src="memories7.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+           <a target="_blank" href="memories8.jpg"> 
+           <img src="memories8.jpg" alt="memories Image" class="circular-image" width="360" height="360">
+           </a>
+            <img src="memories19.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+           <img src="memories21.jpg" alt="memories Image" class="circular-image" width="350" height="350">
+            <img src="memories20.jpg" alt="memories Image" class="circular-image" width="360" height="360">
+        </div>
+
+        <center>
+            <h1 style="color:white;">ᯤ 2024 Video random ♬⋆.˚</h1>
+            <p>Here is a short video random for my 2024 so far::</p>
+            
+            <video width="640" height="360" controls>
+                <source src="video.2.MOV" type="video/mp4">
+            </video>
+            <video width="640" height="360" controls>
+                <source src="video.3.MOV" type="video/mp4">
+            </video> </center>
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+    </section>
+
+
+
+    <section id="contact">
+        <button class="back-btn" onclick="goBack()"></button>
+    <h2>Contact Me</h2>
+    <div class="contact-section">
+        <form><center>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Your Message"></textarea></center>
+
+            <center><button type="submit">SUBMIT</button></center>
+        </form>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</section>
+
+
+
+</section>
+
+<br>
+            <br>
+            <style>
+            .instagram-link img {
+                width: 40px; 
+                height: auto;
+            }
+            .Tiktok-link img {
+                width: 40px; 
+                height: auto;
+            }
+            .Threads-link img {
+                width: 40px; 
+                height: auto;
+            }
+            
+        </style>
+        <body> 
+            <center>
+            <a href="https://www.instagram.com/i._whda/profilecard/?igsh=ZjJodHU0OXBoMzJ" target="_blank" class="instagram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+            <a href="https://www.tiktok.com/@shhhh.554?_t=ZS-8rpdaJcXPoS&_r=1" target="_blank" class="Tiktok-link">
+                <img src="https://static.wikia.nocookie.net/tiktok/images/e/eb/TikTok_Logo.png/revision/latest?cb=20210816124125" alt="Tiktok Logo">
+            <a href="https://www.threads.net/@i._whda" target="_blank" class="Threads-link">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Threads_%28app%29.png" alt="Threads Logo">
+            </a></center>
+        </div>
+    </section>
+</a>
+</a>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Created by Umairah Waheeda | &copy; 2024 All Rights Reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+<!-- HEAD SECTION -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+    <!-- STYLE SECTION -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.7;
+        }
+        a { color: #854F6C; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #854F6C, #D38E9E);
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            box-shadow: 0 11px 14px rgba(0, 0, 0, 0.1);
+        }
+        header nav ul { list-style: none; padding: 0; }
+        header nav ul li { display: inline; margin: 0 15px; }
+        header nav ul li a { color: white; font-weight: bold; }
+
+        /* Section Styles */
+        section {
+            padding: 5em 20px;
+            margin: 2em auto;
+            max-width: 1300px;
+            background: #b39eb5;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            text-align: center;
+            color: #854F6C;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #D38E9E;
+            color: white;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #854F6C;
+        }
+
+        .back-btn:before {
+            content: '←'; /* Arrow symbol for back button */
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+
+        /* Spotify */
+        .song{
+            text-align: center;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /*Digital Timer*/
+        .timer-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #digital-timer {
+            font-weight: bold;
+        }
+
+        /* Gallery and Image Styles */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+        .circular-image {
+            border: 5px solid white;
+            border-radius: 50%;
+        }
+        .container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .gallery-video video {
+            width: 45%;
+            max-width: 500px;
+            border: 2px solid #854F6C;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Resume Table Styles */
+        .resume-table {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .resume-table th, .resume-table td {
+            border: 1px solid grey;
+            padding: 15px;
+            text-align: left;
+        }
+        .resume-table th {
+            background: #854F6C;
+            color: white;
+            font-size: 1.2em;
+        }
+        .resume-table tr:nth-child(even) { background: #D3D3D3; }
+        .resume-table tr:hover { background: none; }
+
+        ul.custom-list {
+        list-style-type: none;
+        padding-left: 0;
+        }
+        ul.custom-list li {
+        background: url('custom-marker.png') no-repeat left center;
+        padding-left: 30px;
+    }
+
+        /* Contact Section Styles */
+        .contact-section input,
+        .contact-section textarea {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 5px solid #9c469c;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+        .contact-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #854F6C;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #bb86b6;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 1px solid #dddddd;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    
